@@ -1,11 +1,9 @@
-// app/page.js
-import Image from "next/image";
-import Link from "next/link";
+import BookLink from "./components/BookLink";
 
 export default function HomePage() {
   return (
-    <div className="bg-[url('/img/bg-accueil.png')] bg-cover bg-center h-screen w-screen flex flex-col items-center">
-      <h1 className="text-black text-5xl flex flex-col uppercase items-center font-bangers my-8">
+    <div className="bg-[url('/img/bg-accueil.png')] bg-cover bg-center flex flex-col items-center h-auto">
+      <h1 className="text-black text-6xl flex flex-col uppercase items-center font-bangers my-8">
         <div className="flex mb-2">
           <span className="border-4 border-black p-3 mr-2">La</span>
           <span className="border-4 border-black p-3">bande</span>
@@ -17,36 +15,27 @@ export default function HomePage() {
         </div>
       </h1>
 
-      <div className="mx-4 max-w-screen-xl">
+      <div className="mx-4 max-w-screen-3xl">
         <video controls src="/video/videoBD.mp4"></video>
       </div>
 
-      <div className="relative w-[700px] h-[400px] group overflow-hidden transition-all duration-500 ease-in-out">
-        <Image
-          src="/img/europeFerme.png"
-          alt="Livre fermé"
-          width={700}
-          height={200} // Plus petite hauteur pour l'image fermée
-          className="object-contain transition-all duration-500 ease-in-out group-hover:opacity-0"
+      <div className="flex flex-col items-center h-[70vh] justify-center gap-5">
+        <BookLink
+          href="/franco-belge"
+          closedImage="/img/europeFerme.png"
+          openImage="/img/europeOuvert.png"
         />
-        <Image
-          src="/img/europeOuvert.png"
-          alt="Livre ouvert"
-          width={800}
-          height={400} // Plus grande hauteur pour l'image ouverte
-          className="absolute inset-0 object-contain transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+        <BookLink
+          href="/asiatique"
+          closedImage="/img/mangaFerme.png"
+          openImage="/img/mangaOuvert.png"
+        />
+        <BookLink
+          href="/comics"
+          closedImage="/img/comicsFerme.png"
+          openImage="/img/comicsOuvert.png"
         />
       </div>
-
-      <Link href="/asiatique" className="text-black">
-        asiatique
-      </Link>
-      <Link href="/comics" className="text-black">
-        comics
-      </Link>
-      <Link href="/franco-belge" className="text-black">
-        franco-belge
-      </Link>
     </div>
   );
 }
