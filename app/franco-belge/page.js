@@ -1,7 +1,9 @@
+import CardChap from "../components/CardChap";
+
 export default function LandingFrancoBelge() {
   return (
-    <div className="bg-[url('/img/fonds/fondFrancoBelge.png')] bg-cover h-screen flex">
-      <div className="w-2/4 flex flex-col justify-center">
+    <div className="bg-[url('/img/fonds/fondFrancoBelge.png')] bg-cover h-screen flex justify-center">
+      <div className="w-2/4 flex flex-col justify-center max-w-screen-sm">
         <h1 className="font-bangers text-6xl">La bd franco-belge</h1>
         <p>
           La bande dessinée européenne est un genre souvent plus long et plus
@@ -15,7 +17,20 @@ export default function LandingFrancoBelge() {
           Faisant d’elle une icône et un indispensable dans le monde du livre.
         </p>
       </div>
-      <div className="w-2/4"></div>
+      <div className="w-2/4 max-w-screen-sm flex flex-col gap-4 justify-center items-center">
+        <CardChap
+          image="/img/francobelge/europe4.jpg"
+          title="Le début du neuvième art"
+        />
+        <CardChap
+          image="/img/francobelge/europe2.jpg"
+          title="Un medium enfantin"
+        />
+        <CardChap
+          image="/img/francobelge/europe3.jpg"
+          title="La naissance en Europe"
+        />
+      </div>
     </div>
   );
 }
